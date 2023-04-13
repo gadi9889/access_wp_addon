@@ -9,267 +9,6 @@ function decreaseFontSize() {
   currentSize -= 2;
   document.body.style.fontSize = currentSize + "px";
 }
-
-// // הגדרת מערך של הקישורים הפעילים בעמוד
-// let links = document.querySelectorAll('a[href]:not([tabindex="-1"])');
-
-// // הוספת מאזין למקשי המקלדת
-// document.addEventListener("keydown", (event) => {
-//   // אם המקש שנלחץ הוא חץ למעלה או למטה
-//   if (event.code === "ArrowUp" || event.code === "ArrowDown") {
-//     event.preventDefault();
-//     // מציאת הקישור הבא או הקודם בהתאם למקש הנלחץ
-//     let index = Array.from(links).indexOf(document.activeElement);
-//     if (event.code === "ArrowUp") {
-//       index = index === 0 ? links.length - 1 : index - 1;
-//     } else {
-//       index = index === links.length - 1 ? 0 : index + 1;
-//     }
-//     // קביעת הקישור המתאים לפעילות
-//     links[index].focus();
-//   }
-// });
-
-// // הוספת כיתוב CSS למחלקה body
-// document.body.style.opacity = 0;
-
-// // חיכוך לטעינת הדף המלאה
-// window.addEventListener("load", () => {
-//   document.body.style.opacity = 1;
-// });
-
-// // קביעת כיתוב CSS למחלקת body
-// document.body.style.filter = "grayscale(100%)";
-
-// // בכדי להחזיר את הצבעים למצבם הרגיל, ניתן להשתמש בקוד הבא:
-// document.body.style.filter = "none";
-
-// // Get the canvas and image elements
-// canvas = document.getElementById("canvas");
-// ctx = canvas.getContext("2d");
-// img = document.getElementById("image");
-
-// // Draw the image on the canvas
-// ctx.drawImage(img, 0, 0);
-
-// // Apply the Sepia filter
-// imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-// data = imageData.data;
-
-// for (let i = 0; i < data.length; i += 4) {
-//   let r = data[i];
-//   let g = data[i + 1];
-// }
-
-// // Get the canvas and image elements
-// canvas = document.getElementById("canvas");
-// ctx = canvas.getContext("2d");
-// img = document.getElementById("image");
-
-// // Draw the image on the canvas
-// ctx.drawImage(img, 0, 0);
-
-// // Apply the high contrast filter
-// imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-// data = imageData.data;
-
-// for (let i = 0; i < data.length; i += 4) {
-//   let r = data[i];
-//   let g = data[i + 1];
-//   let b = data[i + 2];
-
-//   data[i] = r < 128 ? 0 : 255;
-//   data[i + 1] = g < 128 ? 0 : 255;
-//   data[i + 2] = b < 128 ? 0 : 255;
-// }
-
-// ctx.putImageData(imageData, 0, 0);
-
-// // Get the canvas and image elements
-// canvas = document.getElementById("canvas");
-// ctx = canvas.getContext("2d");
-// img = document.getElementById("image");
-
-// // Draw the image on the canvas
-// ctx.drawImage(img, 0, 0);
-
-// // Apply the black and yellow contrast filter
-// imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-// data = imageData.data;
-
-// for (let i = 0; i < data.length; i += 4) {
-//   let r = data[i];
-//   let g = data[i + 1];
-//   let b = data[i + 2];
-
-//   let grayscale = 0.299 * r + 0.587 * g + 0.114 * b;
-
-//   if (grayscale < 128) {
-//     data[i] = 0;
-//     data[i + 1] = 0;
-//     data[i + 2] = 0;
-//   } else {
-//     data[i] = 255;
-//     data[i + 1] = 255;
-//     data[i + 2] = 0;
-//   }
-// }
-
-// ctx.putImageData(imageData, 0, 0);
-
-// // Get the canvas and image elements
-// let canvas = document.getElementById("canvas");
-// let ctx = canvas.getContext("2d");
-// let img = document.getElementById("image");
-
-// // Draw the image on the canvas
-// ctx.drawImage(img, 0, 0);
-
-// // Apply the color reversal filter
-// let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-// let data = imageData.data;
-
-// for (let i = 0; i < data.length; i += 4) {
-//   data[i] = 255 - data[i]; // invert red
-//   data[i + 1] = 255 - data[i + 1]; // invert green
-//   data[i + 2] = 255 - data[i + 2]; // invert blue
-// }
-
-// ctx.putImageData(imageData, 0, 0);
-
-// // Get all the h1, h2, and h3 elements on the page
-// let headings = document.querySelectorAll("h1, h2, h3");
-
-// // Loop through each heading and apply the highlight effect
-// headings.forEach((heading) => {
-//   // Create a span element with the text content of the heading
-//   let span = document.createElement("span");
-//   span.textContent = heading.textContent;
-
-//   // Add a class to the span for styling
-//   span.classList.add("highlight");
-
-//   // Replace the heading with the span
-//   heading.parentNode.replaceChild(span, heading);
-// });
-
-// // Get all the links on the page
-// links = document.getElementsByTagName("a");
-
-// // Loop through each link and apply the highlight effect
-// for (let i = 0; i < links.length; i++) {
-//   // Add a class to the link for styling
-//   links[i].classList.add("highlight");
-// }
-
-// // Get the element that contains the description
-// description = document.getElementById("description");
-
-// // Add a click event listener to the element
-// description.addEventListener("click", function () {
-//   // Toggle the class that shows/hides the description
-//   this.classList.toggle("show-description");
-// });
-
-// // Get the element that contains the description
-// let description = document.getElementById("description");
-
-// // Get the offset position of the description
-// let descriptionOffset = description.offsetTop;
-
-// // Add a scroll event listener to the window
-// window.addEventListener("scroll", function () {
-//   // Check if the user has scrolled past the description
-//   if (window.pageYOffset > descriptionOffset) {
-//     // Add a class to fix the description in place
-//     description.classList.add("fixed-description");
-//   } else {
-//     // Remove the class to restore the normal position
-//     description.classList.remove("fixed-description");
-//   }
-// });
-
-// // Get the element that contains the text
-// let text = document.getElementById("text");
-
-// // Add a click event listener to the element
-// text.addEventListener("click", function () {
-//   // Toggle the class that sets the legible font
-//   this.classList.toggle("legible-font");
-// });
-
-// // Get the element that contains the content
-// content = document.getElementById("content");
-
-// // Get the button that triggers the enlargement
-// let enlargeButton = document.getElementById("enlarge-button");
-
-// // Add a click event listener to the button
-// enlargeButton.addEventListener("click", function () {
-//   // Toggle the class that sets the screen enlargement
-//   content.classList.toggle("screen-enlargement");
-// });
-
-// // Get the button that triggers the minimize
-// let minimizeButton = document.getElementById("minimize-button");
-
-// // Add a click event listener to the button
-// minimizeButton.addEventListener("click", function () {
-//   // Minimize the screen using the browser API
-//   window.innerWidth = 0;
-//   window.innerHeight = 0;
-//   window.screenX = 0;
-//   window.screenY = 0;
-//   window.moveTo(0, 0);
-// });
-
-// // Get the element that will display the marker
-// marker = document.getElementById("marker");
-
-// // Add a mousemove event listener to the document
-// document.addEventListener("mousemove", function (event) {
-//   // Set the position of the marker to the position of the mouse
-//   marker.style.left = event.clientX - 25 + "px";
-//   marker.style.top = event.clientY - 25 + "px";
-// });
-
-// // Get the element that will display the marker
-// marker = document.getElementById("marker");
-
-// // Add a mousemove event listener to the document
-// document.addEventListener("mousemove", function (event) {
-//   // Set the position of the marker to the position of the mouse
-//   marker.style.left = event.clientX - 25 + "px";
-//   marker.style.top = event.clientY - 25 + "px";
-// });
-
-// // Set the style of the marker
-// marker.style.position = "absolute";
-// marker.style.width = "50px";
-// marker.style.height = "50px";
-// marker.style.backgroundColor = "black";
-// marker.style.borderRadius = "50%";
-// marker.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.5)";
-
-// // Get the elements to hide and show
-// let content = document.getElementById("content");
-// let readingModeButton = document.getElementById("readingModeButton");
-
-// // Hide the content by default
-// content.style.display = "none";
-
-// // Add a click event listener to the button
-// readingModeButton.addEventListener("click", function () {
-//   // Toggle the visibility of the content
-//   if (content.style.display === "none") {
-//     content.style.display = "block";
-//     readingModeButton.textContent = "Exit Reading Mode";
-//   } else {
-//     content.style.display = "none";
-//     readingModeButton.textContent = "Enter Reading Mode";
-//   }
-// });
-
 document.addEventListener("DOMContentLoaded", () => {
   const accessButtonMenu = document.createElement("button");
   accessButtonMenu.id = "accessibility-button";
@@ -281,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
   accessModal.id = "accessibility-modal";
   accessModalBack.id = "accessibility-modal-back";
   accessModalBack.appendChild(accessModal);
-  // accessModal.appendChild()
   accessModal.addEventListener("click", function (event) {
     event.stopPropagation();
   });
@@ -304,9 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "ביטול הבהובים",
       func: function () {
         document.body.style.opacity = 0;
-        // window.addEventListener("load", () => {
-        document.body.style.opacity = 1;
-        // });
+        window.addEventListener("load", () => {
+          document.body.style.opacity = 1;
+        });
       },
     },
     {
@@ -318,10 +56,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const img = document.getElementById("image");
 
         // Draw the image on the canvas
-        ctx?.drawImage(img, 0, 0);
+        ctx.drawImage(img, 0, 0);
 
         // Apply the Sepia filter
-        const imageData = ctx?.getImageData(0, 0, canvas.width, canvas.height);
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
         const data = imageData.data;
 
         for (let i = 0; i < data.length; i += 4) {
@@ -331,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     },
     {
-      title: "היפוך צבעים",
+      title: "היפוך צבעים שחור/צהוב",
       func: function () {
         // Get the canvas and image elements
         const canvas = document.getElementById("canvas");
@@ -364,6 +102,182 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         ctx.putImageData(imageData, 0, 0);
+      },
+    },
+    {
+      title: "היפוך צבעים",
+      func: function () {
+        // Get the canvas and image elements
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+        const img = document.getElementById("image");
+
+        // Draw the image on the canvas
+        ctx.drawImage(img, 0, 0);
+
+        // Apply the color reversal filter
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const data = imageData.data;
+
+        for (let i = 0; i < data.length; i += 4) {
+          data[i] = 255 - data[i]; // invert red
+          data[i + 1] = 255 - data[i + 1]; // invert green
+          data[i + 2] = 255 - data[i + 2]; // invert blue
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+      },
+    },
+    {
+      title: "הדגשת כותרות",
+      func: function () {
+        // Get all the h1, h2, and h3 elements on the page
+        const headings = document.querySelectorAll("h1, h2, h3");
+
+        // Loop through each heading and apply the highlight effect
+        headings.forEach((heading) => {
+          // Create a span element with the text content of the heading
+          const span = document.createElement("span");
+          span.textContent = heading.textContent;
+
+          // Add a class to the span for styling
+          span.classList.add("highlight");
+
+          // Replace the heading with the span
+          heading.parentNode.replaceChild(span, heading);
+        });
+      },
+    },
+    {
+      title: "הדגשת קישורים",
+      func: function () {
+        // Get all the h1, h2, and h3 elements on the page
+        // Get all the links on the page
+        const links = document.getElementsByTagName("a");
+
+        // Loop through each link and apply the highlight effect
+        for (let i = 0; i < links.length; i++) {
+          // Add a class to the link for styling
+          links[i].classList.add("highlight");
+        }
+      },
+    },
+    {
+      title: "הצגת תיאור",
+      func: function () {
+        // Get the element that contains the description
+        const description = document.getElementById("description");
+
+        // Add a click event listener to the element
+        description.addEventListener("click", function () {
+          // Toggle the class that shows/hides the description
+          this.classList.toggle("show-description");
+        });
+      },
+    },
+    {
+      title: "תיאור קבוע",
+      func: function () {
+        // Get the element that contains the description
+        const description = document.getElementById("description");
+
+        // Get the offset position of the description
+        const descriptionOffset = description.offsetTop;
+
+        // Add a scroll event listener to the window
+        window.addEventListener("scroll", function () {
+          // Check if the user has scrolled past the description
+          if (window.pageYOffset > descriptionOffset) {
+            // Add a class to fix the description in place
+            description.classList.add("fixed-description");
+          } else {
+            // Remove the class to restore the normal position
+            description.classList.remove("fixed-description");
+          }
+        });
+      },
+    },
+    {
+      title: "גופן קריא",
+      func: function () {
+        // Get the element that contains the text
+        const text = document.getElementById("text");
+
+        // Add a click event listener to the element
+        text.addEventListener("click", function () {
+          // Toggle the class that sets the legible font
+          this.classList.toggle("legible-font");
+        });
+      },
+    },
+    {
+      title: "הגדלת מסך",
+      func: function () {
+        // Get the element that contains the content
+        const content = document.getElementById("content");
+
+        // Get the button that triggers the enlargement
+        const enlargeButton = document.getElementById("enlarge-button");
+
+        // Add a click event listener to the button
+        enlargeButton.addEventListener("click", function () {
+          // Toggle the class that sets the screen enlargement
+          content.classList.toggle("screen-enlargement");
+        });
+      },
+    },
+    {
+      title: "הקטנת מסך",
+      func: function () {
+        // Get the button that triggers the minimize
+        const minimizeButton = document.getElementById("minimize-button");
+
+        // Add a click event listener to the button
+        minimizeButton.addEventListener("click", function () {
+          // Minimize the screen using the browser API
+          window.innerWidth = 0;
+          window.innerHeight = 0;
+          window.screenX = 0;
+          window.screenY = 0;
+          window.moveTo(0, 0);
+        });
+      },
+    },
+    {
+      title: "סמן גדול",
+      func: function () {
+        // Get the element that will display the marker
+        const marker = document.getElementById("marker");
+
+        // Add a mousemove event listener to the document
+        document.addEventListener("mousemove", function (event) {
+          // Set the position of the marker to the position of the mouse
+          marker.style.left = event.clientX - 25 + "px";
+          marker.style.top = event.clientY - 25 + "px";
+        });
+      },
+    },
+    {
+      title: "מצב קריאה",
+      func: function () {
+        // Get the elements to hide and show
+        const content = document.getElementById("content");
+        const readingModeButton = document.getElementById("readingModeButton");
+
+        // Hide the content by default
+        content.style.display = "none";
+
+        // Add a click event listener to the button
+        readingModeButton.addEventListener("click", function () {
+          // Toggle the visibility of the content
+          if (content.style.display === "none") {
+            content.style.display = "block";
+            readingModeButton.textContent = "Exit Reading Mode";
+          } else {
+            content.style.display = "none";
+            readingModeButton.textContent = "Enter Reading Mode";
+          }
+        });
       },
     },
   ];
