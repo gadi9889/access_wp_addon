@@ -1,0 +1,391 @@
+javs script
+
+function increaseFontSize() {
+  let currentSize = parseInt(document.body.style.fontSize) || 16;
+  currentSize += 2;
+  document.body.style.fontSize = currentSize + "px";
+}
+
+
+function decreaseFontSize() {
+  let currentSize = parseInt(document.body.style.fontSize) || 16;
+  currentSize -= 2;
+  document.body.style.fontSize = currentSize + "px";
+}
+
+Html:
+
+<button onclick="increaseFontSize()">הגדל פונט</button>
+<button onclick="decreaseFontSize()">הקטן פונט</button>
+
+
+ניווט מקלדת
+
+// הגדרת מערך של הקישורים הפעילים בעמוד
+const links = document.querySelectorAll('a[href]:not([tabindex="-1"])');
+
+// הוספת מאזין למקשי המקלדת
+document.addEventListener('keydown', (event) => {
+  // אם המקש שנלחץ הוא חץ למעלה או למטה
+  if (event.code === 'ArrowUp' || event.code === 'ArrowDown') {
+    event.preventDefault();
+    // מציאת הקישור הבא או הקודם בהתאם למקש הנלחץ
+    let index = Array.from(links).indexOf(document.activeElement);
+    if (event.code === 'ArrowUp') {
+      index = index === 0 ? links.length - 1 : index - 1;
+    } else {
+      index = index === links.length - 1 ? 0 : index + 1;
+    }
+    // קביעת הקישור המתאים לפעילות
+    links[index].focus();
+  }
+});
+
+
+ביטול הבהובים
+
+// הוספת כיתוב CSS למחלקה body
+document.body.style.opacity = 0;
+
+// חיכוך לטעינת הדף המלאה
+window.addEventListener('load', () => {
+  document.body.style.opacity = 1;
+});
+
+מונוכרום
+
+// קביעת כיתוב CSS למחלקת body
+document.body.style.filter = 'grayscale(100%)';
+
+// בכדי להחזיר את הצבעים למצבם הרגיל, ניתן להשתמש בקוד הבא:
+document.body.style.filter = 'none';
+
+ספיה
+
+// Get the canvas and image elements
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+const img = document.getElementById('image');
+
+// Draw the image on the canvas
+ctx.drawImage(img, 0, 0);
+
+// Apply the Sepia filter
+const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+const data = imageData.data;
+
+for (let i = 0; i < data.length; i += 4) {
+  const r = data[i];
+  const g = data[i + 1];
+}
+ 
+ניגודייות גבוהה
+
+// Get the canvas and image elements
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+const img = document.getElementById('image');
+
+// Draw the image on the canvas
+ctx.drawImage(img, 0, 0);
+
+// Apply the high contrast filter
+const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+const data = imageData.data;
+
+for (let i = 0; i < data.length; i += 4) {
+  const r = data[i];
+  const g = data[i + 1];
+  const b = data[i + 2];
+
+  data[i] = r < 128 ? 0 : 255;
+  data[i + 1] = g < 128 ? 0 : 255;
+  data[i + 2] = b < 128 ? 0 : 255;
+}
+
+ctx.putImageData(imageData, 0, 0);
+
+
+היפוך צסעים שחור/ צהוב
+
+// Get the canvas and image elements
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+const img = document.getElementById('image');
+
+// Draw the image on the canvas
+ctx.drawImage(img, 0, 0);
+
+// Apply the black and yellow contrast filter
+const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+const data = imageData.data;
+
+for (let i = 0; i < data.length; i += 4) {
+  const r = data[i];
+  const g = data[i + 1];
+  const b = data[i + 2];
+
+  const grayscale = 0.299 * r + 0.587 * g + 0.114 * b;
+
+  if (grayscale < 128) {
+    data[i] = 0;
+    data[i + 1] = 0;
+    data[i + 2] = 0;
+  } else {
+    data[i] = 255;
+    data[i + 1] = 255;
+    data[i + 2] = 0;
+  }
+}
+
+ctx.putImageData(imageData, 0, 0);
+
+
+היפוך צבעים
+
+// Get the canvas and image elements
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+const img = document.getElementById('image');
+
+// Draw the image on the canvas
+ctx.drawImage(img, 0, 0);
+
+// Apply the color reversal filter
+const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+const data = imageData.data;
+
+for (let i = 0; i < data.length; i += 4) {
+  data[i] = 255 - data[i]; // invert red
+  data[i + 1] = 255 - data[i + 1]; // invert green
+  data[i + 2] = 255 - data[i + 2]; // invert blue
+}
+
+ctx.putImageData(imageData, 0, 0);
+
+
+הדגשת כותרות
+
+// Get all the h1, h2, and h3 elements on the page
+const headings = document.querySelectorAll('h1, h2, h3');
+
+// Loop through each heading and apply the highlight effect
+headings.forEach(heading => {
+  // Create a span element with the text content of the heading
+  const span = document.createElement('span');
+  span.textContent = heading.textContent;
+  
+  // Add a class to the span for styling
+  span.classList.add('highlight');
+
+  // Replace the heading with the span
+  heading.parentNode.replaceChild(span, heading);
+});
+
+
+הדגשת קישורים 
+[
+// Get all the links on the page
+const links = document.getElementsByTagName('a');
+
+// Loop through each link and apply the highlight effect
+for (let i = 0; i < links.length; i++) {
+  // Add a class to the link for styling
+  links[i].classList.add('highlight');
+}
+
+
+הדגשת קישורים  style
+
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+
+הצגת תיאור
+
+// Get the element that contains the description
+const description = document.getElementById('description');
+
+// Add a click event listener to the element
+description.addEventListener('click', function() {
+  // Toggle the class that shows/hides the description
+  this.classList.toggle('show-description');
+});
+
+css
+
+#description {
+  cursor: pointer;
+}
+
+.show-description {
+  display: block;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+}
+
+
+תיאור קבוע
+
+// Get the element that contains the description
+const description = document.getElementById('description');
+
+// Get the offset position of the description
+const descriptionOffset = description.offsetTop;
+
+// Add a scroll event listener to the window
+window.addEventListener('scroll', function() {
+  // Check if the user has scrolled past the description
+  if (window.pageYOffset > descriptionOffset) {
+    // Add a class to fix the description in place
+    description.classList.add('fixed-description');
+  } else {
+    // Remove the class to restore the normal position
+    description.classList.remove('fixed-description');
+  }
+});
+
+
+css:
+.fixed-description {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+
+גופן קריא 
+
+// Get the element that contains the text
+const text = document.getElementById('text');
+
+// Add a click event listener to the element
+text.addEventListener('click', function() {
+  // Toggle the class that sets the legible font
+  this.classList.toggle('legible-font');
+});
+
+
+css:
+
+.legible-font {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+הגדלת מסך 
+
+// Get the element that contains the content
+const content = document.getElementById('content');
+
+// Get the button that triggers the enlargement
+const enlargeButton = document.getElementById('enlarge-button');
+
+// Add a click event listener to the button
+enlargeButton.addEventListener('click', function() {
+  // Toggle the class that sets the screen enlargement
+  content.classList.toggle('screen-enlargement');
+});
+
+
+css:
+
+.screen-enlargement {
+  transform: scale(1.2);
+}
+
+
+הקטנת מסך 
+
+// Get the button that triggers the minimize
+const minimizeButton = document.getElementById('minimize-button');
+
+// Add a click event listener to the button
+minimizeButton.addEventListener('click', function() {
+  // Minimize the screen using the browser API
+  window.innerWidth = 0;
+  window.innerHeight = 0;
+  window.screenX = 0;
+  window.screenY = 0;
+  window.moveTo(0, 0);
+});
+
+
+סמן גדול
+
+// Get the element that will display the marker
+const marker = document.getElementById('marker');
+
+// Add a mousemove event listener to the document
+document.addEventListener('mousemove', function(event) {
+  // Set the position of the marker to the position of the mouse
+  marker.style.left = (event.clientX - 25) + 'px';
+  marker.style.top = (event.clientY - 25) + 'px';
+});
+
+css:
+
+#marker {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+סמן שחור
+
+// Get the element that will display the marker
+const marker = document.getElementById('marker');
+
+// Add a mousemove event listener to the document
+document.addEventListener('mousemove', function(event) {
+  // Set the position of the marker to the position of the mouse
+  marker.style.left = (event.clientX - 25) + 'px';
+  marker.style.top = (event.clientY - 25) + 'px';
+});
+
+// Set the style of the marker
+marker.style.position = 'absolute';
+marker.style.width = '50px';
+marker.style.height = '50px';
+marker.style.backgroundColor = 'black';
+marker.style.borderRadius = '50%';
+marker.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+
+
+מצב קריאה
+
+// Get the elements to hide and show
+const content = document.getElementById('content');
+const readingModeButton = document.getElementById('readingModeButton');
+
+// Hide the content by default
+content.style.display = 'none';
+
+// Add a click event listener to the button
+readingModeButton.addEventListener('click', function() {
+  // Toggle the visibility of the content
+  if (content.style.display === 'none') {
+    content.style.display = 'block';
+    readingModeButton.textContent = 'Exit Reading Mode';
+  } else {
+    content.style.display = 'none';
+    readingModeButton.textContent = 'Enter Reading Mode';
+  }
+});
+
+ 
+
+
